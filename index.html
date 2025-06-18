@@ -3,25 +3,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Taxi Trips Visualization</title>
+    <title>Taxi Trips Interactive Dashboard</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        body { font-family: Arial, sans-serif; }
-        #map { height: 500px; margin: 20px 0; }
-        .chart { margin: 20px 0; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 1200px;
+        }
+        #map {
+            height: 500px;
+            margin: 20px 0;
+            border: 2px solid #ccc;
+        }
+        .chart {
+            margin: 40px 0;
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            pointer-events: none;
+            font-size: 12px;
+        }
+        #pie-chart {
+            max-width: 600px;
+            margin: 40px auto;
+        }
     </style>
 </head>
 <body>
-    <h2>Taxi Trips Final Project Visualization</h2>
-    <div id="description">
-        <p>This dashboard shows multiple aspects of taxi trips including their routes on a map, speed distribution, and distance comparison.</p>
-    </div>
+    <h2>Taxi Trips Interactive Dashboard</h2>
+    <p>Click a Taxi ID in the bar chart to highlight its route on the map and reveal the streets it used.</p>
 
     <div id="map"></div>
     <div id="bar-chart" class="chart"></div>
     <div id="speed-chart" class="chart"></div>
+    <div id="pie-chart" class="chart"></div>
 
     <script src="scripts.js"></script>
 </body>
